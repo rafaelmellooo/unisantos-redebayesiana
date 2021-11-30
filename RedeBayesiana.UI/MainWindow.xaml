@@ -7,18 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="414" Width="631" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" SnapsToDevicePixels="True" WindowState="Normal" ResizeMode="NoResize">
     <Grid>
-        <TextBox Name="txtInput1" HorizontalAlignment="Left" Margin="33,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207"/>
-        <Label Content="Nome" HorizontalAlignment="Left" Margin="33,57,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="207" FontSize="14"/>
-        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="33,253,0,0" VerticalAlignment="Top" Width="207" Height="50" Background="#FF2ECA8D" FontWeight="Bold" FontSize="18" Foreground="White" Click="btnRun_Click" BorderBrush="Black"/>
-        <ListView Name="lstData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="288,10,33,95" Width="300">
+        <TextBox Name="txtInput" HorizontalAlignment="Left" Margin="33,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" KeyDown="txtInput_KeyDown"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="33,80,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="208" FontSize="14"/>
+        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="33,309,0,0" VerticalAlignment="Top" Width="208" Height="47" Background="#FF2ECA8D" FontWeight="Bold" FontSize="18" Foreground="White" Click="btnRun_Click" BorderBrush="Black" IsEnabled="False"/>
+        <ListView Name="lstData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="288,10,33,95" Width="300" Foreground="Black" BorderBrush="Black">
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
-                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" />
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Name}" Width="150" />
+                    <GridViewColumn Header="Gênero" DisplayMemberBinding="{Binding Gender}" Width="100" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Name="btnRemoveItem" Content="Apagar Linha" HorizontalAlignment="Left" Margin="293,309,0,0" VerticalAlignment="Top" Height="47" Width="129" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE6C115" BorderBrush="Black" RenderTransformOrigin="0.527,0.533"/>
-        <Button Name="btnClearData" Content="Apagar Histórico" HorizontalAlignment="Left" Margin="464,308,0,0" VerticalAlignment="Top" Height="48" Width="129" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE28717" BorderBrush="Black" Click="btnClearData_Click"/>
+        <Button Name="btnClearData" Content="Apagar Histórico" HorizontalAlignment="Left" Margin="293,308,0,0" VerticalAlignment="Top" Height="48" Width="300" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE28717" BorderBrush="Black" Click="btnClearData_Click"/>
+        <Button Name="btnAdd" Content="Adicionar" HorizontalAlignment="Left" Margin="154,137,0,0" VerticalAlignment="Top" Height="40" Width="87" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FF19B9A7" Click="btnAdd_Click"/>
+        <Label HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top" Height="52" Width="208">
+            <TextBlock Text="Adicione pelo menos 3 nomes para Executar." TextWrapping="Wrap" />
+        </Label>
     </Grid>
 </Window>
