@@ -1,0 +1,9 @@
+# Visual Studio
+.vs
+
+# JetBrains
+.idea
+
+# C#
+bin
+obj
