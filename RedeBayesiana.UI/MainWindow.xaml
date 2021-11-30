@@ -5,18 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RedeBayesiana.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="500" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF333333">
-        <TextBox Name="txtInput1" HorizontalAlignment="Left" Margin="118,123,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <TextBox Name="txtInput2" HorizontalAlignment="Left" Margin="118,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <TextBox Name="txtInput3" HorizontalAlignment="Left" Margin="118,189,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
-        <Label Content="1° Nome" HorizontalAlignment="Left" Margin="49,36,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
-        <Label Content="2° Nome" HorizontalAlignment="Left" Margin="49,119,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Content="3° Nome" HorizontalAlignment="Left" Margin="49,185,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
-        <Label Name="lblResult1" Content="" HorizontalAlignment="Left" Margin="335,36,0,0" VerticalAlignment="Top" Width="100" Foreground="White" BorderBrush="White" BorderThickness="1,1,1,1" FontWeight="Bold"/>
-        <Label Name="lblResult2" Content="" HorizontalAlignment="Left" Margin="335,119,0,0" VerticalAlignment="Top" Width="100" Foreground="White" FontWeight="Bold" BorderBrush="White" BorderThickness="1,1,1,1"/>
-        <Label Name="lblResult3" Content="" HorizontalAlignment="Left" Margin="335,185,0,0" VerticalAlignment="Top" Width="100" BorderBrush="White" BorderThickness="1,1,1,1" FontWeight="Bold" Foreground="White"/>
-        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="107,246,0,0" VerticalAlignment="Top" Width="100" Height="50" Background="#FF3ACA13" FontWeight="Bold" FontSize="14" Foreground="White" Click="btnRun_Click"/>
-        <Button Name="btnDelete" Content="Apagar" HorizontalAlignment="Left" Margin="285,246,0,0" VerticalAlignment="Top" Width="100" Height="50" Background="#FFE63E0C" Foreground="White" FontWeight="Bold" FontSize="14" Click="btnDelete_Click"/>
+        Title="MainWindow" Height="414" Width="631" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" SnapsToDevicePixels="True" WindowState="Normal" ResizeMode="NoResize">
+    <Grid>
+        <TextBox Name="txtInput1" HorizontalAlignment="Left" Margin="33,91,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="207"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="33,57,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="207" FontSize="14"/>
+        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="33,253,0,0" VerticalAlignment="Top" Width="207" Height="50" Background="#FF2ECA8D" FontWeight="Bold" FontSize="18" Foreground="White" Click="btnRun_Click" BorderBrush="Black"/>
+        <ListView Name="lstData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="288,10,33,95" Width="300">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Gender" DisplayMemberBinding="{Binding Gender}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btnRemoveItem" Content="Apagar Linha" HorizontalAlignment="Left" Margin="293,309,0,0" VerticalAlignment="Top" Height="47" Width="129" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE6C115" BorderBrush="Black" RenderTransformOrigin="0.527,0.533"/>
+        <Button Name="btnClearData" Content="Apagar Histórico" HorizontalAlignment="Left" Margin="464,308,0,0" VerticalAlignment="Top" Height="48" Width="129" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE28717" BorderBrush="Black" Click="btnClearData_Click"/>
     </Grid>
 </Window>
