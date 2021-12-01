@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RedeBayesiana.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="414" Width="631" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" SnapsToDevicePixels="True" WindowState="Normal" ResizeMode="NoResize">
+        Title="MainWindow" Height="400" Width="600" WindowStartupLocation="CenterScreen" WindowStyle="None" SnapsToDevicePixels="True" WindowState="Normal" ResizeMode="NoResize">
     <Grid>
-        <TextBox Name="txtInput" HorizontalAlignment="Left" Margin="33,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" KeyDown="txtInput_KeyDown"/>
-        <Label Content="Nome" HorizontalAlignment="Left" Margin="33,80,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="208" FontSize="14"/>
-        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="33,309,0,0" VerticalAlignment="Top" Width="208" Height="47" Background="#FF2ECA8D" FontWeight="Bold" FontSize="18" Foreground="White" Click="btnRun_Click" BorderBrush="Black" IsEnabled="False"/>
-        <ListView Name="lstData" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="288,10,33,95" Width="300" Foreground="Black" BorderBrush="Black">
+        <TextBox Name="txtInput" HorizontalAlignment="Left" Margin="33,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="208" KeyDown="txtInput_KeyDown"/>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="33,97,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" Width="208" FontSize="14"/>
+        <Button Name="btnRun" Content="Executar" HorizontalAlignment="Left" Margin="33,326,0,0" VerticalAlignment="Top" Width="208" Height="48" Background="#FF2ECA8D" FontWeight="Bold" FontSize="16" Foreground="White" Click="btnRun_Click" BorderBrush="Black" IsEnabled="False" BorderThickness="0,0,0,0"/>
+        <ListView Name="lstData" Margin="310,45,25,90" Foreground="Black" BorderBrush="Black">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Header="Nome" DisplayMemberBinding="{Binding Name}" Width="150" />
@@ -18,10 +18,11 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Name="btnClearData" Content="Apagar Histórico" HorizontalAlignment="Left" Margin="293,308,0,0" VerticalAlignment="Top" Height="48" Width="300" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FFE28717" BorderBrush="Black" Click="btnClearData_Click"/>
-        <Button Name="btnAdd" Content="Adicionar" HorizontalAlignment="Left" Margin="154,137,0,0" VerticalAlignment="Top" Height="40" Width="87" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FF19B9A7" Click="btnAdd_Click"/>
-        <Label HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top" Height="52" Width="208">
-            <TextBlock Text="Adicione pelo menos 3 nomes para Executar." TextWrapping="Wrap" />
+        <Button Name="btnClearData" Content="Apagar Histórico" HorizontalAlignment="Left" Margin="310,326,0,0" VerticalAlignment="Top" Height="48" Width="265" Foreground="White" FontWeight="Bold" FontSize="16" Background="#FFE28717" BorderBrush="Black" Click="btnClearData_Click" BorderThickness="0,0,0,0"/>
+        <Button Name="btnAdd" Content="Adicionar" HorizontalAlignment="Left" Margin="154,154,0,0" VerticalAlignment="Top" Height="40" Width="87" Foreground="White" FontWeight="Bold" FontSize="14" Background="#FF19B9A7" Click="btnAdd_Click" BorderThickness="0,0,0,0"/>
+        <Label HorizontalAlignment="Left" Margin="33,45,0,0" VerticalAlignment="Top" Height="52" Width="208">
+            <TextBlock Text="Adicione pelo menos 3 nomes para Executar." TextWrapping="Wrap" FontSize="14" />
         </Label>
+        <Button Name="btnClose" Content="X" HorizontalAlignment="Left" Margin="564,0,0,0" VerticalAlignment="Top" Background="#FFEF0465" Height="28" Width="36" Foreground="White" FontSize="16" FontWeight="Bold" BorderThickness="0,0,0,0" BorderBrush="Black" Click="btnClose_Click"/>
     </Grid>
 </Window>

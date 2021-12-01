@@ -41,6 +41,9 @@ namespace RedeBayesiana.UI
 
         private async void btnRun_Click(object sender, RoutedEventArgs e)
         {
+            btnRun.IsEnabled = false;
+            btnRun.Content = "Aguarde...";
+
             var names = Data.Where(item => item.Gender is null).Select(item => item.Name).ToArray();
 
             var genders = await GetGenders(names);
@@ -54,6 +57,9 @@ namespace RedeBayesiana.UI
             }
 
             lstData.Items.Refresh();
+
+            btnRun.Content = "Executar";
+            btnRun.IsEnabled = true;
         }
 
         private void btnClearData_Click(object sender, RoutedEventArgs e)
@@ -88,6 +94,11 @@ namespace RedeBayesiana.UI
             {
                 btnAdd_Click(sender, e);
             }
+        }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
