@@ -1,0 +1,18 @@
+# Visual Studio
+.vs
+
+# JetBrains
+.idea
+
+# C#
+bin
+obj
+
+
+
+# Python
+__pycache__
+.venv
+
+# Visual Studio Code
+.vscode
